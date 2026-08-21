@@ -1,6 +1,6 @@
-from xml.dom.xmlbuilder import DocumentLS
-
 from flask import Flask, render_template, request, send_file
+from zipfile import ZipFile
+import io
 import os
 import runpy
 import sys
@@ -60,7 +60,27 @@ def process_data():
     subprocess.run("npx klattsch " + '"' + bass_in + " " + cleaned_arpa + '"', shell=True)
     klattsch_file = 'klattsch.wav'
 
-    return send_file(klattsch_file, as_attachment=True)
+    file_paths = [
+        klattsch_file,
+        arpa_file_path
+    ]
+    
+    zip_buffer = io.BytesIO()
+    
+    with ZipFile(zip_buffer, 'w') as zip_file:
+        for file_path in file_paths:
+            if os.path.exists(file_path):
+                zip_file.write(file_path, os.path.basename(file_path))
+                
+    zip_buffer.seek(0)
+    
+    # 5. Send the stream back as a downloadable attachment
+    return send_file(
+        zip_buffer,
+        mimetype='application/zip',
+        as_attachment=True,
+        download_name='generated_assets.zip'
+    )
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
