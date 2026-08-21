@@ -2,32 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Arpabet Translator</title>
+    <title>TEXT TO KLATTSCH</title>
 </head>
-<body>
-	<h1>ARPABET TRANSLATOR</h1>
-    <h2>Enter Text to Translate</h2>
+<body bgcolor="black" text="#006400">
+	<h1>TEXT TO KLATTSCH</h1>
+    <h2>Enter Text to Generate</h2>
 	<p></p>
-	<p>The possible setting prefixes and their value range are listed below:</p>
+	<h3>The possible setting prefixes and their value range are listed below:</h3>
 	<p></p>
-	<h3>Absolute Base: bN b=N [ANY VALUE, Hz]-------Relative Base: b+N b-N [ANY VALUE, Hz]</h3>
-	<h3>Phenome Rate: rN r=N [ANY VALUE, Ms]--------Relative Phenome: r+N r-N [ANY VALUE, Ms]</h3>
-	<h3>Formant Scale: sN s=N [1.0 = m, 1.7 = f]----Relative Formant: s+N s-N [ANY VALUE, Decimal]</h3>
-	<h3>Vibrato Depth: vN [ANY VALUE]---------------Relative Vibrato Depth: v+N v-N [ANY VALUE]</h3>
-	<h3>Vibrato Rate: wN [ANY VALUE]----------------Relative Vibrato Depth: w+N w-N [ANY VALUE]</h3>
-	<h3>Tremolo Depth: mN [ANY VALUE]---------------Relative Tremolo Depth: m+N m-N [ANY VALUE]</h3>
-	<h3>Tremolo Rate: nN [ANY VALUE]----------------Relative Tremolo Depth: n+N n-N [ANY VALUE]</h3>
-	<h3>Spectral Tilt: tN [ANY VALUE, lower=darker]-Relative Spectral Tilt: t+N t-N [ANY VALUE]</h3>
-	<h3>Vocal Effort: gN [0-1, higher=tenser]-------Relative Vocal Effort: g+N g-N [0-1]</h3>
-	<h3>Breathiness: hN [0-1]-----------------------Relative Breathiness: h+N h-N [0-1]</h3>
+	<p>Absolute Base: bN b=N [ANY VALUE, Hz]-------Relative Base: b+N b-N [ANY VALUE, Hz]</p>
+	<p>Phenome Rate: rN r=N [ANY VALUE, Ms]--------Relative Phenome: r+N r-N [ANY VALUE, Ms]</p>
+	<p>Formant Scale: sN s=N [1.0 = m, 1.7 = f]----Relative Formant: s+N s-N [ANY VALUE, Decimal]</p>
+	<p>Vibrato Depth: vN [ANY VALUE]---------------Relative Vibrato Depth: v+N v-N [ANY VALUE]</p>
+	<p>Vibrato Rate: wN [ANY VALUE]----------------Relative Vibrato Depth: w+N w-N [ANY VALUE]</p>
+	<p>Tremolo Depth: mN [ANY VALUE]---------------Relative Tremolo Depth: m+N m-N [ANY VALUE]</p>
+	<p>Tremolo Rate: nN [ANY VALUE]----------------Relative Tremolo Depth: n+N n-N [ANY VALUE]</p>
+	<p>Spectral Tilt: tN [ANY VALUE, lower=darker]-Relative Spectral Tilt: t+N t-N [ANY VALUE]</p>
+	<p>Vocal Effort: gN [0-1, higher=tenser]-------Relative Vocal Effort: g+N g-N [0-1]</p>
+	<p>Breathiness: hN [0-1]-----------------------Relative Breathiness: h+N h-N [0-1]</p>
     
     <!-- When submitted, this sends data to the Python script -->
     <form action="/process" method="POST">
         <label for="text_input">Your text:</label>
-        <input type="text" id="text_input" name="text_input" required>
+        <input type="text" style="background-color: black; color: #006400;" id="text_input" name="text_input" required="">
 		<label for="text_input">Clip Settings:</label>
-		<input type="text" id="bass_input" name="bass_input" required="">
-        <button type="submit">Translate To Arpabet and Download</button>
+		<input type="text" style="background-color: black; color: #006400;" id="bass_input" name="bass_input" required="">
+        <button type="submit" style="background-color: black; color: #006400;">Generate and Download</button>
     </form>
     
 </body>
